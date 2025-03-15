@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM AI Query Interface</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">
+                <div class="ai-icon"></div>
+                <span>AI Query</span> Interface
+            </h1>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>API Connected</span>
+            </div>
+        </div>
+        
+        <section class="prompt-section">
+            <div class="prompt-container">
+                <div class="prompt-heading">
+                    <div class="prompt-label">Ask about your contracts, clients, and offers</div>
+                </div>
+                
+                <div class="quick-suggestions">
+                    <div class="suggestion-chip">Show active contracts</div>
+                    <div class="suggestion-chip">List clients in technology industry</div>
+                    <div class="suggestion-chip">Show pending offers</div>
+                    <div class="suggestion-chip">Contracts expiring soon</div>
+                </div>
+                
+                <div class="prompt-input-container">
+                    <input type="text" id="prompt-input" placeholder="Ask anything about your CRM data..." autocomplete="off">
+                    <button class="send-btn" id="submit-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="results-section">
+            <div class="results-container">
+                <div class="results-header">
+                    <div class="results-title">Query Results</div>
+                    <div class="filter-controls">
+                        <button class="view-btn active" data-view="summary">Summary</button>
+                        <button class="view-btn" data-view="table">Table</button>
+                        <button class="view-btn" data-view="cards">Cards</button>
+                    </div>
+                </div>
+                
+                <div class="loading-indicator" id="loading-indicator">
+                    <div class="loading-animation">
+                        <div class="loading-circle"></div>
+                        <div class="loading-circle"></div>
+                    </div>
+                    <div class="loading-text">Processing your query...</div>
+                </div>
+                
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-icon">📊</div>
+                    <h3 class="empty-title">No Data Displayed Yet</h3>
+                    <p>Try asking a question about your CRM data above.</p>
+                </div>
+                
+                <div class="results-content hidden" id="results-summary"></div>
+                <div class="results-content hidden" id="results-table"></div>
+                <div class="results-content hidden" id="results-cards"></div>
+            </div>
+        </section>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html> 
